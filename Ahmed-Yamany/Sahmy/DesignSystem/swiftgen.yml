@@ -1,0 +1,34 @@
+input_dir: DesignSystem/
+output_dir: DesignSystem/
+
+
+#strings:
+#   inputs:
+#     - Localization/StringFiles/General/en.lproj
+#     - Localization/StringFiles/Authentication/en.lproj
+#   outputs:
+#     - templateName: structured-swift5
+#       output: Localization/swiftgen-generated-strings.swift
+#       params:
+#        enumName: L10n
+#        lookupFunction: swiftgen_localized(forKey:table:fallbackValue:)
+#        publicAccess: true
+        
+#fonts:
+#  inputs:
+#    - Foundations/Typography/Fonts
+#  outputs:
+#    templateName: swift5
+#    output: Foundations/Typography/FontFamily.swift
+#    params:
+#        publicAccess: true
+
+#files:
+#  inputs:
+#    - Foundations/Files
+##  filter: .+\.mp4$
+#  outputs:
+#    templateName: structured-swift5
+#    output: Foundations/Files/Files+Generated.swift
+#    params:
+#        publicAccess: true
