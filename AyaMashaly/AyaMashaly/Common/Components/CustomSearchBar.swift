@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CustomSearchBar: View {
+    
     @State private var searchText: String = ""
     var body: some View {
         HStack{
@@ -15,6 +16,7 @@ struct CustomSearchBar: View {
                 print("search tapped")
             }) {
                 Image(systemName: "magnifyingglass")
+                
                     .foregroundColor(.black)
             }.padding()
             

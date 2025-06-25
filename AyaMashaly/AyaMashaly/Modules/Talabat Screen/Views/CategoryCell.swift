@@ -12,6 +12,7 @@ struct CategoryCell: View {
     var body: some View {
         VStack(spacing: 2) {
             ZStack {
+#warning("Avoid using strings")
                 Image(categortModel.image)
                     .resizable()
                     .padding()
@@ -19,6 +20,9 @@ struct CategoryCell: View {
                     .background(Color("backgroundColor"))
                     .cornerRadius(20)
                 
+#warning("Don't make UILogic here")
+#warning("Why u don't make corner radius modifier")
+#warning("Fixed Text like Fast !!!")
                 if categortModel.title == "talabat mart" {
                     Text("Fast")
                         .headerSectionStyle(size: 14, weight: .bold, color: .white)

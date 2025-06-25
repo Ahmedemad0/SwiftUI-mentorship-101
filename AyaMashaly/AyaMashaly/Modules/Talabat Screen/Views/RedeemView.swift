@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RedeemView: View {
+    
+#warning("@StateObject ?? ")
     @StateObject private var viewModel = TalabatViewModel()
     
     var body: some View {
@@ -24,9 +26,9 @@ struct RedeemView: View {
                 
             }
         }.padding()
-            .onAppear{
-                viewModel.fetchRedeemItems()
-            }
+        .onAppear{
+            viewModel.fetchRedeemItems()
+        }
     }
 }
 

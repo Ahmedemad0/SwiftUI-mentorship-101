@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HeaderView: View {
+#warning("Even if the view is small and simple, don't write all the views in the body directly")
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             HStack {
@@ -21,6 +22,7 @@ struct HeaderView: View {
                 }
             }
             
+#warning("Where search text")
             CustomSearchBar()
             
         }

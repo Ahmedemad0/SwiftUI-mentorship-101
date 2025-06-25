@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+#warning("Check the naming of functions")
 extension View {
     func borderOfCustomSearchBar(cornerRadius: CGFloat, color: Color) -> some View {
         background {
@@ -30,6 +31,7 @@ extension View {
 }
 
 
+#warning("Modifiers shouldn't be here")
 struct PlaceholderStyle: ViewModifier {
     var show: Bool
     var placeholder: String

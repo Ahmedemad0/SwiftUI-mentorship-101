@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct FoodRecommendationsView: View {
+    
+#warning("@StateObject ?? ")
     @StateObject private var viewModel = TalabatViewModel()
     
     var body: some View {
@@ -25,6 +27,7 @@ struct FoodRecommendationsView: View {
         }
         .padding()
         .onAppear{
+#warning("Why .onAppear")
             viewModel.fetchFoodRecommended()
         }
     }

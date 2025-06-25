@@ -14,6 +14,7 @@ struct FoodRecommendationsCell: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
             ZStack {
+#warning("U can mae image with ImageResource type and its better than string")
                 Image(foodRecommendationsModel.image)
                     .scaledToFit()
                     .frame(width: 120, height: 120)

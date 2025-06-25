@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CategoriesView: View {
+#warning("@StateObject ?? ")
     @StateObject private var viewModel = TalabatViewModel()
     
     var body: some View {
