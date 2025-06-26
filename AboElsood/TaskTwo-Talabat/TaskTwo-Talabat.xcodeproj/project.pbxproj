@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2146F9502E0D81CC0034801E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2146F94F2E0D81CC0034801E /* Kingfisher */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		2146F91F2E0C34B50034801E /* TaskTwo-Talabat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TaskTwo-Talabat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2146F9502E0D81CC0034801E /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = "TaskTwo-Talabat";
 			packageProductDependencies = (
+				2146F94F2E0D81CC0034801E /* Kingfisher */,
 			);
 			productName = "TaskTwo-Talabat";
 			productReference = 2146F91F2E0C34B50034801E /* TaskTwo-Talabat.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = 2146F9162E0C34B50034801E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2146F94E2E0D81CC0034801E /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2146F9202E0C34B50034801E /* Products */;
 			projectDirPath = "";
@@ -324,6 +333,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2146F94E2E0D81CC0034801E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.3.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2146F94F2E0D81CC0034801E /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2146F94E2E0D81CC0034801E /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2146F9172E0C34B50034801E /* Project object */;
 }
