@@ -20,7 +20,8 @@ struct BestSpotSection: View {
                     ForEach(bestSpotsResturants,id: \.id){ restaurant in
                         BestSpotCell(restorant: restaurant) { id in
                             onFavoriteTapped(id)
-                        }.frame(width: 150)
+                        }
+                        .frame(width: 150)
                     }
                 }
             }

@@ -13,8 +13,12 @@ struct HomeView: View {
     var body: some View {
         ScrollView {
             ZStack {
+#warning("Make the primary color only in header scope")
+
                 PrimaryColor
+                
                 VStack {
+#warning("It would be better if u made this view and searchBar in a separate view like HomeHeaderView")
                     VStack(alignment: .leading, spacing: 12) {
                         HStack {
                             Text("Deliver to Apartment")
@@ -29,7 +33,7 @@ struct HomeView: View {
                             CategoriesSection(categories: viewModel.categories)
                                 .frame(height: 120)
                                 .padding(.top)
-                            
+#warning("U don't need to add specific height...")
                             BestSpotSection(
                                 bestSpotsResturants: viewModel.bestSpots,
                                 onFavoriteTapped: viewModel.onFavoriteTapped
