@@ -15,6 +15,8 @@ class HomeViewModel: ObservableObject {
     
     func getData() {
         fetchCategories()
+        fetchRestaurant()
+        getVoucherData()
     }
     
     private func fetchCategories() {
@@ -30,6 +32,19 @@ class HomeViewModel: ObservableObject {
     }
     
     private func fetchRestaurant() {
-        let model = RestaurantView(restauantImage: "rest1", restaurantLogo: "rest1l", restaurantName: "Asian Corner", restaurantRating: "4.7", restaurantReviewCount: "1000", offerLabel: "Buy 1 get 1 free", isRestaurantPro: true)
+        restaurantsArray = [
+            RestaurantUIModel(restauantImage: "rest1", restaurantLogo: "rest1l", restaurantName: "Asian Corner", restaurantRating: "4.7", restaurantReviewCount: "1000", offerLabel: "Buy 1 get 1 free", isRestaurantPro: true),
+            RestaurantUIModel(restauantImage: "rest3", restaurantLogo: "rest3l", restaurantName: "BBQ", restaurantRating: "5", restaurantReviewCount: "900", offerLabel: nil, isRestaurantPro: false),
+            RestaurantUIModel(restauantImage: "rest4", restaurantLogo: "rest4l", restaurantName: "Sush", restaurantRating: "4.7", restaurantReviewCount: "2000", offerLabel: nil, isRestaurantPro: false),
+            RestaurantUIModel(restauantImage: "rest5", restaurantLogo: "rest5l", restaurantName: "Pizza", restaurantRating: "4.9", restaurantReviewCount: "1500", offerLabel: "Buy 1 get 1 free", isRestaurantPro: false)
+            
+            ]
+    }
+    
+    private func getVoucherData() {
+        vouchersArray = [
+            VoucherUIModel(voucherImage: "voucher1", voucherDescription: "2,935 points"),
+            VoucherUIModel(voucherImage: "voucher2", voucherDescription: "2 vouchers")
+            ]
     }
 }

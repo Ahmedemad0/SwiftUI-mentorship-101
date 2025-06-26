@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @State var searchText: String = ""
     @StateObject var viewModel = HomeViewModel()
-    let rows = [GridItem(.fixed(150))]
+    
     var body: some View {
         ScrollView {
             
@@ -53,7 +53,7 @@ struct HomeView: View {
 
                         VStack(alignment: .leading) {
                             ScrollView(.horizontal, showsIndicators: false) {
-                                LazyHGrid(rows: rows, alignment: .top, spacing: 8) {
+                                HStack {
                                         ForEach(viewModel.categoriesArray, id: \.self) { item in
                                             CategoriesView(category: item)
                                         }
@@ -63,16 +63,38 @@ struct HomeView: View {
                             
                             TalabatText(text: "Yalla, find the best spots for you", textColor: .black, textWeight: .semibold, textSize: 18)
                                 .padding()
+                            
+                            ScrollView(.horizontal, showsIndicators: false) {
+                               HStack {
+                                        ForEach(viewModel.restaurantsArray, id: \.self) { item in
+                                            RestaurantView(model: item)
+                                        }
+                                    }
+                                    .padding(.horizontal)
+                                }
+                            
+                            TalabatText(text: "Redeem and save", textColor: .black, textWeight: .semibold, textSize: 18)
+                                .padding()
+                            
+                            ScrollView(.horizontal, showsIndicators: false) {
+                               HStack {
+                                        ForEach(viewModel.vouchersArray, id: \.self) { item in
+                                            VoucherView(voucherImage: item.voucherImage, voucherDescription: item.voucherDescription)
+                                        }
+                                    }
+                                    .padding(.horizontal)
+                                }
+                            
+                            PromoBannerView()
+                                .padding()
                         }
                         .padding(.vertical, 32)
                     }
                 }
-                
-                
             }
         }
         
-        .ignoresSafeArea()
+        .ignoresSafeArea(edges: .top)
         .onAppear {
             viewModel.getData()
         }
@@ -115,7 +137,7 @@ struct CategoriesUIModel: Hashable {
     let categoryExtraInfo: String?
 }
 
-struct RestaurantUIModel {
+struct RestaurantUIModel: Hashable {
     let id = UUID()
     let restauantImage: String
     let restaurantLogo: String
@@ -126,7 +148,7 @@ struct RestaurantUIModel {
     let isRestaurantPro: Bool
 }
 
-struct VoucherUIModel {
+struct VoucherUIModel: Hashable {
     let id = UUID()
     let voucherImage: String
     let voucherDescription: String

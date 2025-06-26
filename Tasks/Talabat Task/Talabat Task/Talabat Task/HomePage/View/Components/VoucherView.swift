@@ -14,8 +14,11 @@ struct VoucherView: View {
     var body: some View {
         HStack {
             TalabatImage(imageName: voucherImage, height: 30, width: 30)
-            TalabatText(text: voucherDescription, textColor: .black, textWeight: .semibold, textSize: 18)
+            TalabatText(text: voucherDescription, textColor: .black, textWeight: .semibold, textSize: 14)
+            Spacer()
         }
+        .padding()
+        .frame(width: 200, height: 60)
         .outline()
     }
 }

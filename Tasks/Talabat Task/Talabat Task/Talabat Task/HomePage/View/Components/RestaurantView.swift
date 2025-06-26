@@ -8,13 +8,7 @@
 import SwiftUI
 
 struct RestaurantView: View {
-    let restauantImage: String
-    let restaurantLogo: String
-    let restaurantName: String
-    let restaurantRating: String
-    let restaurantReviewCount: String
-    let offerLabel: String?
-    let isRestaurantPro: Bool
+    let model: RestaurantUIModel
     
     private let constants = RestaurantViewConstants()
     
@@ -24,12 +18,12 @@ struct RestaurantView: View {
                 ZStack(alignment: .topTrailing) {
                     ZStack(alignment: .topLeading) {
                         TalabatImage(
-                            imageName: restauantImage,
+                            imageName: model.restauantImage,
                             height: constants.imageSize,
                             width: constants.imageSize)
                         
                         TalabatImage(
-                            imageName: restaurantLogo,
+                            imageName: model.restaurantLogo,
                             height: constants.logoImageSize,
                             width: constants.logoImageSize)
                         .padding(constants.iconsPadding)
@@ -39,20 +33,20 @@ struct RestaurantView: View {
                         .padding(constants.iconsPadding)
                     
                 }
-                if offerLabel != nil {
+                if model.offerLabel != nil {
                     offerView
                         .padding(constants.iconsPadding)
                 }
             }
             VStack (alignment: .leading, spacing: 0) {
                 HStack {
-                    if isRestaurantPro {
+                    if model.isRestaurantPro {
                         TalabatImage(
                             imageName: constants.proImage,
                             height: constants.proImageSize,
                             width: constants.proImageSize)
                     }
-                    TalabatText(text: restaurantName, textColor: .black, textWeight: .semibold, textSize: constants.restaurantNameFontSize)
+                    TalabatText(text: model.restaurantName, textColor: .black, textWeight: .semibold, textSize: constants.restaurantNameFontSize)
                 }
                 
                 HStack {
@@ -60,16 +54,18 @@ struct RestaurantView: View {
                         .resizable()
                         .foregroundStyle(.yellow)
                         .frame(width: constants.proImageSize, height: constants.proImageSize)
-                    TalabatText(text: restaurantRating, textColor: .black, textWeight: .semibold, textSize: constants.restaurantRatingFontSize)
-                    TalabatText(text: "(\(restaurantReviewCount)+)", textColor: .gray, textWeight: .semibold, textSize: constants.restaurantRatingFontSize)
+                    TalabatText(text: model.restaurantRating, textColor: .black, textWeight: .semibold, textSize: constants.restaurantRatingFontSize)
+                    TalabatText(text: "(\(model.restaurantReviewCount)+)", textColor: .gray, textWeight: .semibold, textSize: constants.restaurantRatingFontSize)
                 }
             }
         }
+        
+        .frame(width: 200, height: 270)
     }
     
     @ViewBuilder
     private var offerView: some View {
-        Text(offerLabel ?? "")
+        Text(model.offerLabel ?? "")
             .font(.caption)
             .padding(.horizontal, 8)
             .padding(.vertical, 4)
@@ -80,6 +76,7 @@ struct RestaurantView: View {
 
 #Preview {
     RestaurantView(
+        model: RestaurantUIModel(
         restauantImage: "AsianCorner",
         restaurantLogo: "AsianCornerLogo",
         restaurantName: "Asian Corner",
@@ -87,6 +84,7 @@ struct RestaurantView: View {
         restaurantReviewCount: "1,000",
         offerLabel: "Buy 1 Get 1 Free",
         isRestaurantPro: true
+        )
     )
 }
 

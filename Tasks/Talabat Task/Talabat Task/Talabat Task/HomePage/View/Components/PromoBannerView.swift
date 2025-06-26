@@ -39,13 +39,13 @@ struct PromoBannerView: View {
                                    text: promoTitle,
                                    textColor: .white,
                                    textWeight: .bold,
-                                   textSize: 18)
+                                   textSize: 12)
                                Spacer()
                                TalabatText(
                                    text: "Join",
                                    textColor: .white,
                                    textWeight: .semibold,
-                                   textSize: 18)
+                                   textSize: 12)
                                .underline()
            
                            }
@@ -55,7 +55,7 @@ struct PromoBannerView: View {
                                 text: promoDescription,
                                 textColor: .black,
                                 textWeight: .light,
-                                textSize: 16)
+                                textSize: 12)
                         }
                     }
                 }
