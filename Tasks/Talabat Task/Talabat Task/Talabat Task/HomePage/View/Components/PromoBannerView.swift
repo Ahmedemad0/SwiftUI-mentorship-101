@@ -33,7 +33,7 @@ struct PromoBannerView: View {
                             .padding(.top, 16)
                             .padding(.trailing, 8)
                     }
-                    VStack(alignment: .leading, spacing: 20) {
+                    VStack(alignment: .leading, spacing: 30) {
                         HStack {
                             TalabatText(
                                 text: promoTitle,
