@@ -12,6 +12,9 @@ struct SectionCell: View {
     let section: sectionModel
     
     var body: some View {
+        
+#warning("where's ur view modifiers")
+        
         VStack(spacing: 8) {
             
             Image(section.image)

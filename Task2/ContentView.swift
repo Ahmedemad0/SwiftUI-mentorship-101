@@ -11,9 +11,12 @@ struct ContentView: View {
     
     @StateObject var viewModel = MealsViewModel()
     
+#warning("Disappointed for seeing all the view in the same body")
+#warning("Where's the headerView?!")
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
+#warning("Why u used .onAppear")
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 8) {
                         ForEach(viewModel.sections) { section in

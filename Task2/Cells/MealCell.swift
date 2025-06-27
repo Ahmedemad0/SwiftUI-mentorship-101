@@ -37,6 +37,7 @@ struct MealCell: View {
                             .frame(width: 40, height: 40)
                             .shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: 1)
                         
+#warning("Why u don't handle like")
                         Image(systemName: "heart")
                             .resizable()
                             .scaledToFit()
