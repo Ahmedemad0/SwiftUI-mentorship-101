@@ -17,7 +17,7 @@ struct HomeView: View {
             ZStack {
                 
                 (Color(red: 245 / 255, green: 89 / 255, blue: 6 / 255))
-                                    
+                
                 VStack {
                     VStack(spacing: 12) {
                         HStack {
@@ -50,40 +50,42 @@ struct HomeView: View {
                         JaggedTopEdge()
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                             .foregroundStyle(.white)
-
+                        
                         VStack(alignment: .leading) {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack {
-                                        ForEach(viewModel.categoriesArray, id: \.self) { item in
-                                            CategoriesView(category: item)
-                                        }
+                                    ForEach(viewModel.categoriesArray, id: \.self) { item in
+                                        CategoriesView(category: item)
                                     }
-                                    .padding(.horizontal)
                                 }
+                                .padding(.horizontal)
+                            }
                             
                             TalabatText(text: "Yalla, find the best spots for you", textColor: .black, textWeight: .semibold, textSize: 18)
                                 .padding()
                             
                             ScrollView(.horizontal, showsIndicators: false) {
-                               HStack {
-                                        ForEach(viewModel.restaurantsArray, id: \.self) { item in
-                                            RestaurantView(model: item)
-                                        }
+                                HStack {
+                                    ForEach(Array(viewModel.restaurantsArray.enumerated()), id: \.element.id) { index, item in
+                                        RestaurantView(model: item, actionBlock: {
+                                            viewModel.restaurantsArray[index].isFavorited.toggle()
+                                        })
                                     }
-                                    .padding(.horizontal)
                                 }
+                                .padding(.horizontal)
+                            }
                             
                             TalabatText(text: "Redeem and save", textColor: .black, textWeight: .semibold, textSize: 18)
                                 .padding()
                             
                             ScrollView(.horizontal, showsIndicators: false) {
-                               HStack {
-                                        ForEach(viewModel.vouchersArray, id: \.self) { item in
-                                            VoucherView(voucherImage: item.voucherImage, voucherDescription: item.voucherDescription)
-                                        }
+                                HStack {
+                                    ForEach(viewModel.vouchersArray, id: \.self) { item in
+                                        VoucherView(voucherImage: item.voucherImage, voucherDescription: item.voucherDescription)
                                     }
-                                    .padding(.horizontal)
                                 }
+                                .padding(.horizontal)
+                            }
                             
                             PromoBannerView()
                                 .padding()
@@ -99,57 +101,10 @@ struct HomeView: View {
             viewModel.getData()
         }
     }
-        
+    
 }
 
 
 #Preview {
     HomeView()
-}
-import SwiftUI
-
-struct JaggedTopEdge: Shape {
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-
-        path.move(to: CGPoint(x: 0, y: rect.maxY))
-        path.addLine(to: CGPoint(x: 0, y: 15))
-
-        path.addLine(to: CGPoint(x: rect.width * 0.10, y: 10))
-        path.addLine(to: CGPoint(x: rect.width * 0.15, y: 8))
-        path.addLine(to: CGPoint(x: rect.width * 0.35, y: 14))
-        path.addLine(to: CGPoint(x: rect.width * 0.55, y: 4))
-        path.addLine(to: CGPoint(x: rect.width * 0.75, y: 10))
-        path.addLine(to: CGPoint(x: rect.width * 0.9, y: 5))
-        path.addLine(to: CGPoint(x: rect.maxX, y: 10))
-
-        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
-        path.addLine(to: CGPoint(x: 0, y: rect.maxY))
-
-        return path
-    }
-}
-
-struct CategoriesUIModel: Hashable {
-    let id = UUID()
-    let categoryName: String
-    let categoryImage: String
-    let categoryExtraInfo: String?
-}
-
-struct RestaurantUIModel: Hashable {
-    let id = UUID()
-    let restauantImage: String
-    let restaurantLogo: String
-    let restaurantName: String
-    let restaurantRating: String
-    let restaurantReviewCount: String
-    let offerLabel: String?
-    let isRestaurantPro: Bool
-}
-
-struct VoucherUIModel: Hashable {
-    let id = UUID()
-    let voucherImage: String
-    let voucherDescription: String
 }

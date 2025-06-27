@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct FavoriteButton: View {
+    var isFavorite: Bool
+    var didTapOnFavorite: (() -> Void)?
     var body: some View {
         ZStack {
             Circle()
@@ -15,13 +17,20 @@ struct FavoriteButton: View {
                 .foregroundStyle(.white)
                 .frame(width: 30, height: 30)
             
-            Image(systemName: "heart")
+            Image(systemName: isFavorite ?  "heart.fill" : "heart")
                 .foregroundColor(.black)
                 .frame(width: 18, height: 18)
+            
         }
+        .onTapGesture {
+            guard let didTapOnFavorite = didTapOnFavorite else { return }
+            didTapOnFavorite()
+            
+        }
+        
     }
 }
 
 #Preview {
-    FavoriteButton()
+    FavoriteButton(isFavorite: false)
 }

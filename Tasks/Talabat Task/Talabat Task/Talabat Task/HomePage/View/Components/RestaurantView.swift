@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RestaurantView: View {
     let model: RestaurantUIModel
-    
+    var actionBlock: () -> Void = { }
     private let constants = RestaurantViewConstants()
     
     var body: some View {
@@ -29,7 +29,7 @@ struct RestaurantView: View {
                         .padding(constants.iconsPadding)
                     }
                     
-                    FavoriteButton()
+                    FavoriteButton(isFavorite: model.isFavorited, didTapOnFavorite: actionBlock)
                         .padding(constants.iconsPadding)
                     
                 }
@@ -92,8 +92,8 @@ private struct RestaurantViewConstants {
     let imageSize: CGFloat = 200
     let spacing: CGFloat = 8
     let proImage: String = "pro"
-    let restaurantNameFontSize: CGFloat = 18
-    let restaurantRatingFontSize: CGFloat = 16
+    let restaurantNameFontSize: CGFloat = 14
+    let restaurantRatingFontSize: CGFloat = 12
     let proImageSize: CGFloat = 18
     let starImageNAme: String = "star.fill"
     let iconsPadding: CGFloat = 12

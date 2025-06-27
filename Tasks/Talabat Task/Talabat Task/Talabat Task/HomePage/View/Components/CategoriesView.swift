@@ -19,16 +19,17 @@ struct CategoriesView: View {
                         imageName: category.categoryImage, height: constants.imageSize, width: constants.imageSize)
                     .shadow(color: Color.black.opacity(0.2), radius: 7, x: 0, y: 12)
                 }
-                    .frame(width: 80, height: 80)
-                    .background(Color(red: 244 / 255, green: 237 / 255, blue: 227 / 255))
-                    .cornerRadius(16)
+                .frame(width: 80, height: 80)
+                .background(Color(red: 244 / 255, green: 237 / 255, blue: 227 / 255))
+                .cornerRadius(16)
                 
                 Text(category.categoryName)
+                    .font(.system(size: 12, weight: .regular))
                     .truncationMode(.middle)
                     .multilineTextAlignment(.center)
-                    .frame(height: 50)
+                    .frame(height: 30)
             }
-            .frame(width: 80, height: 160)
+            .frame(width: 80, height: 130)
             
             offerView            
         }

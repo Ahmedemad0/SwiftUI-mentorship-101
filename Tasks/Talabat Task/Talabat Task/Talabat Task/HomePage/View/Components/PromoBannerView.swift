@@ -35,20 +35,20 @@ struct PromoBannerView: View {
                     }
                     VStack(alignment: .leading, spacing: 20) {
                         HStack {
-                               TalabatText(
-                                   text: promoTitle,
-                                   textColor: .white,
-                                   textWeight: .bold,
-                                   textSize: 12)
-                               Spacer()
-                               TalabatText(
-                                   text: "Join",
-                                   textColor: .white,
-                                   textWeight: .semibold,
-                                   textSize: 12)
-                               .underline()
-           
-                           }
+                            TalabatText(
+                                text: promoTitle,
+                                textColor: .white,
+                                textWeight: .bold,
+                                textSize: 12)
+                            Spacer()
+                            TalabatText(
+                                text: "Join",
+                                textColor: .white,
+                                textWeight: .semibold,
+                                textSize: 12)
+                            .underline()
+                            
+                        }
                         .padding(.trailing, 8)
                         HStack {
                             TalabatText(
@@ -81,33 +81,4 @@ struct PromoBannerView: View {
 
 #Preview {
     PromoBannerView()
-}
-
-
-struct PolygonShape: Shape {
-    var sides: Int
-
-    func path(in rect: CGRect) -> Path {
-        guard sides >= 3 else { return Path() }
-
-        let center = CGPoint(x: rect.midX, y: rect.midY)
-        let radius = min(rect.width, rect.height) / 2
-
-        var path = Path()
-        let angle = (2 * .pi) / CGFloat(sides)
-
-        for i in 0..<sides {
-            let x = center.x + radius * cos(CGFloat(i) * angle - .pi / 2)
-            let y = center.y + radius * sin(CGFloat(i) * angle - .pi / 2)
-
-            if i == 0 {
-                path.move(to: CGPoint(x: x, y: y))
-            } else {
-                path.addLine(to: CGPoint(x: x, y: y))
-            }
-        }
-
-        path.closeSubpath()
-        return path
-    }
 }
