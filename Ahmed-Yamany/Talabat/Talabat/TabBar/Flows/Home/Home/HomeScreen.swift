@@ -84,6 +84,7 @@ private struct HomeContent: View {
     var body: some View {
         LazyVStack {
             CategoriesSection(categories: CategoryEntity.samples)
+            TrendsSection(trends: $viewModel.trends)
         }
     }
 }

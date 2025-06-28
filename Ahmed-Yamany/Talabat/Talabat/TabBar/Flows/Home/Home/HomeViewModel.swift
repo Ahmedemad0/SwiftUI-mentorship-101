@@ -12,6 +12,7 @@ import SwiftUI
 final class HomeViewModel: ObservableObject {
     var searchText: String = ""
     var userLocation: String = "Cairo, Egypt"
+    var trends: [TrendViewModel] = TrendViewModel.samples
     
     let coordinator: HomeCoordinator
     
