@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeScreen: View {
     @StateObject private var viewModel: HomeViewModel
-    
+
     init(coordinator: HomeCoordinator) {
         _viewModel = StateObject(wrappedValue: HomeViewModel(coordinator: coordinator))
     }
@@ -22,19 +22,31 @@ struct HomeScreen: View {
                         .visualEffect { content, proxy in
                             let rect = proxy.frame(in: .scrollView)
                             return content
-                                .offset(y: rect.minY < 0 ? 0 : -rect.minY)
+                                .offset(y: rect.minY < 0 ? 0 : -rect.minY) // pin the search view on scroll to bottom
                         }
                         .zIndex(1)
 
                     LazyVStack(spacing: 24) {
                         Text("Loading")
-                        
+
                         HomeContent(viewModel: viewModel)
                     }
                     .zIndex(0)
                     .offset(y: -40)
                 }
+                .overlay(alignment: .top) {
+                    Rectangle()
+                        .fill(.white)
+                        .frame(height: geometryProxy.safeAreaInsets.top)
+                        .visualEffect { content, proxy in
+                            let rect = proxy.frame(in: .scrollView)
+                            return content
+                                .offset(y: -rect.minY) // pin a white rectangle on the top
+                                .opacity(-rect.midY / (160 / 2)) // update opacity based on scroll offset
+                        }
+                }
             }
+
             .ignoresSafeArea()
         }
     }
@@ -71,9 +83,7 @@ private struct HomeContent: View {
 
     var body: some View {
         LazyVStack {
-            ForEach(0 ..< 1000) { _ in
-                Text("Heelo")
-            }
+            CategoriesSection(categories: CategoryEntity.samples)
         }
     }
 }
