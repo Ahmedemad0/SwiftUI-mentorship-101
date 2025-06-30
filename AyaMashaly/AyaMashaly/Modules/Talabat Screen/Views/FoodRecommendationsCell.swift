@@ -14,7 +14,6 @@ struct FoodRecommendationsCell: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
             ZStack {
-#warning("U can mae image with ImageResource type and its better than string")
                 Image(foodRecommendationsModel.image)
                     .scaledToFit()
                     .frame(width: 120, height: 120)
@@ -44,7 +43,7 @@ struct FoodRecommendationsCell: View {
             
             VStack(alignment: .leading, spacing: 6) {
                 Text(foodRecommendationsModel.title)
-                    .headerSectionStyle(size: 16, weight: .medium, color: .black)
+                    .textStyle(size: 16, weight: .medium, color: .black)
                 
                 starAndPriceView(foodRecommendationsModel: foodRecommendationsModel)
             }
@@ -61,9 +60,9 @@ struct starAndPriceView: View {
                 .frame(width: 14, height: 14)
             
             Text(foodRecommendationsModel.price)
-                .headerSectionStyle(size: 16, weight: .medium, color: .black)
+                .textStyle(size: 16, weight: .medium, color: .black)
             Text("(\(foodRecommendationsModel.countUsers)+)")
-                .headerSectionStyle(size: 14, weight: .regular, color: .gray)
+                .textStyle(size: 14, weight: .regular, color: .gray)
         }
     }
 }

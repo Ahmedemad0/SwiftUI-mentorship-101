@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CustomSearchBar: View {
+    @Binding var searchText: String
     
-    @State private var searchText: String = ""
     var body: some View {
         HStack{
             Button(action: {
@@ -22,7 +22,7 @@ struct CustomSearchBar: View {
             
             TextField("Search for Pizza", text: $searchText)
                 .tint(.black)
-                .customPlaceholderStyle(text: "Search for Pizza", show: searchText.isEmpty, color: .black)
+                .placeholderStyle(text: "Search for Pizza", show: searchText.isEmpty, color: .black)
         }
         .borderOfCustomSearchBar(cornerRadius: 25, color: .white)
     }

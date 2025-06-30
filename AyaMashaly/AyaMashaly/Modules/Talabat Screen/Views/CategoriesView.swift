@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct CategoriesView: View {
-#warning("@StateObject ?? ")
-    @StateObject private var viewModel = TalabatViewModel()
+    @ObservedObject var viewModel: TalabatViewModel
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -21,13 +20,13 @@ struct CategoriesView: View {
         }
         .padding(.horizontal)
         .padding(.top, 16)
-        .onAppear {
+        .task {
             viewModel.fetchCategories()
         }
     }
 }
 
 #Preview {
-    CategoriesView()
+    CategoriesView(viewModel: TalabatViewModel())
 }
 

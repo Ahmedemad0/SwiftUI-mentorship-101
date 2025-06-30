@@ -9,13 +9,12 @@ import SwiftUI
 
 struct RedeemView: View {
     
-#warning("@StateObject ?? ")
-    @StateObject private var viewModel = TalabatViewModel()
+    @ObservedObject var viewModel: TalabatViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
             Text("Redeem and Save")
-                .headerSectionStyle(size: 20, weight: .medium, color: .black)
+                .textStyle(size: 20, weight: .medium, color: .black)
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
@@ -26,9 +25,9 @@ struct RedeemView: View {
                 
             }
         }.padding()
-        .onAppear{
-            viewModel.fetchRedeemItems()
-        }
+            .task{
+                viewModel.fetchRedeemItems()
+            }
     }
 }
 
@@ -43,7 +42,7 @@ struct RedeemComponents: View {
                 .frame(width: 30, height: 30)
             
             Text(item.pointsText)
-                .headerSectionStyle(size: 16, weight: .medium, color: .black)
+                .textStyle(size: 16, weight: .medium, color: .black)
             Spacer()
             
         }
@@ -58,5 +57,5 @@ struct RedeemComponents: View {
 
 
 #Preview {
-    RedeemView()
+    RedeemView(viewModel: TalabatViewModel())
 }

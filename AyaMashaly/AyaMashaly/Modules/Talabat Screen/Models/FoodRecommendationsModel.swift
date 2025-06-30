@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import DeveloperToolsSupport
 
 struct FoodRecommendationsModel: Identifiable {
     let id = UUID().uuidString
-    let image: String
+    let image: ImageResource
     let title: String
     let rating: Double
     let price: String
     let countUsers: Int
-    let logo: String
+    let logo: ImageResource
 }

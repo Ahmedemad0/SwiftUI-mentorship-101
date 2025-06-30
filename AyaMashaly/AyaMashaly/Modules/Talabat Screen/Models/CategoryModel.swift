@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import DeveloperToolsSupport
 
 struct CategoryModel: Identifiable {
     let id = UUID().uuidString
-    let image: String
+    let image: ImageResource
     let title: String
+    let badgeText: String?
 }

@@ -9,13 +9,12 @@ import SwiftUI
 
 struct FoodRecommendationsView: View {
     
-#warning("@StateObject ?? ")
-    @StateObject private var viewModel = TalabatViewModel()
+    @ObservedObject var viewModel: TalabatViewModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("Yalla, find the best spots for you")
-                .headerSectionStyle(size: 18, weight: .medium, color: .black)
+                .textStyle(size: 18, weight: .medium, color: .black)
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
@@ -26,13 +25,12 @@ struct FoodRecommendationsView: View {
             }
         }
         .padding()
-        .onAppear{
-#warning("Why .onAppear")
+        .task {
             viewModel.fetchFoodRecommended()
         }
     }
 }
 
 #Preview {
-    FoodRecommendationsView()
+    FoodRecommendationsView(viewModel: TalabatViewModel())
 }

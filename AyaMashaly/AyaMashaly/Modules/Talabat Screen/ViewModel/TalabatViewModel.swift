@@ -14,26 +14,26 @@ class TalabatViewModel: ObservableObject {
     
     func fetchCategories() {
         categories = [
-            .init(image: "6", title: "Food"),
-            .init(image: "7", title: "talabat mart"),
-            .init(image: "8", title: "Groceries"),
-            .init(image: "9", title: "Health & Beauty"),
-            .init(image: "10", title: "Gift $ Donate"),
-            .init(image: "6", title: "Flowers"),
-            .init(image: "7", title: "Coffee"),
-            .init(image: "8", title: "More shops"),
-            .init(image: "9", title: "Coffee"),
+            .init(image: ._6, title: "Food", badgeText: nil),
+            .init(image: ._7, title: "talabat mart", badgeText: "Fast"),
+            .init(image: ._8, title: "Groceries", badgeText: nil),
+            .init(image: ._9, title: "Health & Beauty", badgeText: nil),
+            .init(image: ._10, title: "Gift $ Donate", badgeText: nil),
+            .init(image: ._6, title: "Flowers", badgeText: nil),
+            .init(image: ._7, title: "Coffee", badgeText: nil),
+            .init(image: ._8, title: "More shops", badgeText: nil),
+            .init(image: ._9, title: "Coffee", badgeText: "Slow"),
         ]
     }
     
     func fetchFoodRecommended() {
         foodRecommended = [
-            .init(image: "1", title: "Asian Corner", rating: 1, price: "15.0", countUsers: 120, logo: "logo"),
-            .init(image: "2", title: "GRIIX", rating: 1, price: "15.0", countUsers: 120, logo: "logo"),
-            .init(image: "1", title: "Asian Corner", rating: 1, price: "15.0", countUsers: 120, logo: "logo"),
-            .init(image: "2", title: "GRIIX", rating: 1, price: "15.0", countUsers: 120, logo: "logo"),
-            .init(image: "1", title: "Shawarma", rating: 1, price: "15.0", countUsers: 120, logo: "logo"),
-            .init(image: "2", title: "Shawarma", rating: 1, price: "15.0", countUsers: 120, logo: "logo"),
+            .init(image: ._1, title: "Asian Corner", rating: 1, price: "15.0", countUsers: 120, logo: .logo),
+            .init(image: ._2, title: "GRIIX", rating: 1, price: "15.0", countUsers: 120, logo: .logo),
+            .init(image: ._1, title: "Asian Corner", rating: 1, price: "15.0", countUsers: 120, logo: .logo),
+            .init(image: ._2, title: "GRIIX", rating: 1, price: "15.0", countUsers: 120, logo: .logo),
+            .init(image: ._1, title: "Shawarma", rating: 1, price: "15.0", countUsers: 120, logo: .logo),
+            .init(image: ._2, title: "Shawarma", rating: 1, price: "15.0", countUsers: 120, logo: .logo),
         ]
     }
     
