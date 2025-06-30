@@ -12,6 +12,7 @@ class MealsViewModel: ObservableObject {
     @Published var sections: [sectionModel] = []
     @Published var meals: [MealModel] = []
     @Published var gifts: [sectionModel] = []
+    @Published var searchText: String = ""
     
     func fetchSections() {
         let sections = [
