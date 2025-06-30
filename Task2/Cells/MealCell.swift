@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MealCell: View {
     
+    @State var isFavourite: Bool = false
+    
     let meal: MealModel
     
     var body: some View {
@@ -37,12 +39,15 @@ struct MealCell: View {
                             .frame(width: 40, height: 40)
                             .shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: 1)
                         
-#warning("Why u don't handle like")
-                        Image(systemName: "heart")
-                            .resizable()
-                            .scaledToFit()
-                            .foregroundColor(.red)
-                            .frame(width: 20, height: 20)
+                        Button {
+                            isFavourite.toggle()
+                        } label: {
+                            Image(systemName: isFavourite ? "heart.fill" : "heart")
+                                .resizable()
+                                .scaledToFit()
+                                .foregroundColor(.red)
+                                .frame(width: 20, height: 20)
+                        }
                     }
                 }
                 .padding(10)

@@ -15,7 +15,7 @@ struct HeaderView: View {
         ZStack {
             Color(.orange)
             
-            VStack(alignment: .leading){
+            VStack(alignment: .leading) {
                 
                 Spacer()
                 
@@ -32,17 +32,22 @@ struct HeaderView: View {
                 }
                 .foregroundColor(.white)
                 
-                TextField("Search for Pizza", text: $viewModel.searchText)
-                               .disableAutocorrection(true)
-                               .padding()
-                               .frame(height: 40)
-                               .background(.white)
-                               .cornerRadius(20)
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(.gray)
+                    
+                    TextField("Search for Pizza", text: $viewModel.searchText)
+                        .autocorrectionDisabled(true)
+                        .disableAutocorrection(true)
+                        
+                }
+                .padding()
+                .frame(height: 40)
+                .background(.white)
+                .cornerRadius(20)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.leading, 16)
-            .padding(.trailing, 16)
-            .padding(.bottom, 16)
+            .padding(.all, 16)
         }
         .frame(height: 200)
     }

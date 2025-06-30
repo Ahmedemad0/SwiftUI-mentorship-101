@@ -20,7 +20,7 @@ struct SectionCell: View {
             Image(section.image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 80, height: 60)
+                .frame(width: 80, height: 80)
                 .clipped()
                 .cornerRadius(6)
                 
