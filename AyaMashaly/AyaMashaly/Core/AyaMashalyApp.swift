@@ -11,7 +11,7 @@ import SwiftUI
 struct AyaMashalyApp: App {
     var body: some Scene {
         WindowGroup {
-            TalabatScreen()
+            OrdersScreen()
         }
     }
 }
