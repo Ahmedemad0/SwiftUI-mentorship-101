@@ -52,43 +52,6 @@ struct HomeScreen: View {
     }
 }
 
-private struct HomeSearchView: View {
-    @ObservedObject var viewModel: HomeViewModel
-    let topPadding: CGFloat
-
-    var body: some View {
-        VStack(alignment: .leading) {
-            Button {
-                viewModel.didTapDeleverTo()
-            } label: {
-                HStack {
-                    Text("Delever To \(viewModel.userLocation)")
-                    Image(systemName: "chevron.down")
-                }
-                .foregroundStyle(.white)
-            }
-
-            SearchTextField(text: $viewModel.searchText, placeholder: "Search For Pizza")
-        }
-        .padding(.horizontal, 18)
-        .padding(.top, topPadding)
-        .frame(maxWidth: .infinity)
-        .frame(height: 160)
-        .background(.talabat)
-    }
-}
-
-private struct HomeContent: View {
-    @ObservedObject var viewModel: HomeViewModel
-
-    var body: some View {
-        LazyVStack {
-            CategoriesSection(categories: CategoryEntity.samples)
-            TrendsSection(trends: $viewModel.trends)
-        }
-    }
-}
-
 #Preview {
     TabBarFlow()
 }

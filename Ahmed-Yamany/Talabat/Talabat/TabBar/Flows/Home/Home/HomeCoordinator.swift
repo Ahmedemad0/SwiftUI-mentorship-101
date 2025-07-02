@@ -10,4 +10,6 @@ import Foundation
 @MainActor
 protocol HomeCoordinator {
     func presentSelectLocationScreen()
+    func navigateToCategoryDetails(_ category: CategoryEntity)
+    func navigateToTrendDetails(_ trend: TrendViewModel)
 }

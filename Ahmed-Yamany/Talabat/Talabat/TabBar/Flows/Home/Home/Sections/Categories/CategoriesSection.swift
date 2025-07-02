@@ -9,12 +9,17 @@ import SwiftUI
 
 struct CategoriesSection: View {
     let categories: [CategoryEntity]
+    let onCategoryTapped: (CategoryEntity) -> Void
 
     var body: some View {
         ScrollView(.horizontal) {
             LazyHStack(alignment: .top) {
                 ForEach(categories) { category in
-                    CategoryCell(category: category)
+                    Button {
+                        onCategoryTapped(category)
+                    } label: {
+                        CategoryCell(category: category)
+                    }
                 }
             }
         }

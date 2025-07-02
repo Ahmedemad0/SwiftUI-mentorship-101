@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TrendsSection: View {
     @Binding var trends: [TrendViewModel]
-    
+    let didTapTrend: (_ trend: TrendViewModel) -> Void
     private let padding: CGFloat = 18
 
     var body: some View {
@@ -21,7 +21,11 @@ struct TrendsSection: View {
             ScrollView(.horizontal) {
                 LazyHStack(alignment: .top) {
                     ForEach($trends) { trend in
-                        TrendCell(trend: trend)
+                        Button {
+                            didTapTrend(trend.wrappedValue)
+                        } label: {
+                            TrendCell(trend: trend)
+                        }
                     }
                 }
             }

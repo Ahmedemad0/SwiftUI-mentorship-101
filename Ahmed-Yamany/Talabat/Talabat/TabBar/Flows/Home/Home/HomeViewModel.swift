@@ -12,6 +12,7 @@ import SwiftUI
 final class HomeViewModel: ObservableObject {
     var searchText: String = ""
     var userLocation: String = "Cairo, Egypt"
+    var categories: [CategoryEntity] = CategoryEntity.samples
     var trends: [TrendViewModel] = TrendViewModel.samples
     
     let coordinator: HomeCoordinator
@@ -22,6 +23,14 @@ final class HomeViewModel: ObservableObject {
     
     func didTapDeleverTo() {
         coordinator.presentSelectLocationScreen()
+    }
+    
+    func didTapTrend(_ trend: TrendViewModel) {
+        coordinator.navigateToTrendDetails(trend)
+    }
+    
+    func didTapCategory(_ category: CategoryEntity) {
+        coordinator.navigateToCategoryDetails(category)
     }
 }
 
