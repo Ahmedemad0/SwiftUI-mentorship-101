@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct HomeView: View {
     
     @StateObject var viewModel = MealsViewModel()
-
+    @EnvironmentObject var coordinator: AppCoordinator
     
     var body: some View {
         NavigationStack {
@@ -26,8 +26,12 @@ struct ContentView: View {
                         items: viewModel.sections,
                         content: { section in
                             SectionCell(section: section)
+                                .onTapGesture {
+                                    coordinator.push(.profile)
+                                }
                         }
                     )
+                
                     
                     HorizontalSectionView(
                         title: "Yalla, find the best meals for you",
@@ -59,5 +63,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    HomeView()
 }
