@@ -7,53 +7,64 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		73E362412E105006005FE6B1 /* Coordinator in Frameworks */ = {isa = PBXBuildFile; productRef = 73E362402E105006005FE6B1 /* Coordinator */; };
+		73820BBF2E157DB70026915C /* Coordinator in Frameworks */ = {isa = PBXBuildFile; productRef = 73820BBE2E157DB70026915C /* Coordinator */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		73E35F5C2E104271005FE6B1 /* Talabat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Talabat.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		73E362422E105045005FE6B1 /* Coordinator */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Coordinator; sourceTree = "<group>"; };
+		73820B602E157CFB0026915C /* SwiftUIMentorshipALLTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIMentorshipALLTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		73820BBC2E157DA50026915C /* Exceptions for "SwiftUIMentorshipALLTasks" folder in "SwiftUIMentorshipALLTasks" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Coordinator,
+			);
+			target = 73820B5F2E157CFB0026915C /* SwiftUIMentorshipALLTasks */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		73E35F5E2E104271005FE6B1 /* Talabat */ = {
+		73820B622E157CFB0026915C /* SwiftUIMentorshipALLTasks */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Talabat;
+			exceptions = (
+				73820BBC2E157DA50026915C /* Exceptions for "SwiftUIMentorshipALLTasks" folder in "SwiftUIMentorshipALLTasks" target */,
+			);
+			path = SwiftUIMentorshipALLTasks;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		73E35F592E104271005FE6B1 /* Frameworks */ = {
+		73820B5D2E157CFB0026915C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73E362412E105006005FE6B1 /* Coordinator in Frameworks */,
+				73820BBF2E157DB70026915C /* Coordinator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		73E35F532E104271005FE6B1 = {
+		73820B572E157CFB0026915C = {
 			isa = PBXGroup;
 			children = (
-				73E35F5E2E104271005FE6B1 /* Talabat */,
-				73E3623F2E105006005FE6B1 /* Frameworks */,
-				73E35F5D2E104271005FE6B1 /* Products */,
-				73E362422E105045005FE6B1 /* Coordinator */,
+				73820B622E157CFB0026915C /* SwiftUIMentorshipALLTasks */,
+				73820BBD2E157DB70026915C /* Frameworks */,
+				73820B612E157CFB0026915C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		73E35F5D2E104271005FE6B1 /* Products */ = {
+		73820B612E157CFB0026915C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				73E35F5C2E104271005FE6B1 /* Talabat.app */,
+				73820B602E157CFB0026915C /* SwiftUIMentorshipALLTasks.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		73E3623F2E105006005FE6B1 /* Frameworks */ = {
+		73820BBD2E157DB70026915C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -63,65 +74,65 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		73E35F5B2E104271005FE6B1 /* Talabat */ = {
+		73820B5F2E157CFB0026915C /* SwiftUIMentorshipALLTasks */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 73E35F6A2E104273005FE6B1 /* Build configuration list for PBXNativeTarget "Talabat" */;
+			buildConfigurationList = 73820B6E2E157CFD0026915C /* Build configuration list for PBXNativeTarget "SwiftUIMentorshipALLTasks" */;
 			buildPhases = (
-				73E35F582E104271005FE6B1 /* Sources */,
-				73E35F592E104271005FE6B1 /* Frameworks */,
-				73E35F5A2E104271005FE6B1 /* Resources */,
+				73820B5C2E157CFB0026915C /* Sources */,
+				73820B5D2E157CFB0026915C /* Frameworks */,
+				73820B5E2E157CFB0026915C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				73E35F5E2E104271005FE6B1 /* Talabat */,
+				73820B622E157CFB0026915C /* SwiftUIMentorshipALLTasks */,
 			);
-			name = Talabat;
+			name = SwiftUIMentorshipALLTasks;
 			packageProductDependencies = (
-				73E362402E105006005FE6B1 /* Coordinator */,
+				73820BBE2E157DB70026915C /* Coordinator */,
 			);
-			productName = Talabat;
-			productReference = 73E35F5C2E104271005FE6B1 /* Talabat.app */;
+			productName = SwiftUIMentorshipALLTasks;
+			productReference = 73820B602E157CFB0026915C /* SwiftUIMentorshipALLTasks.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		73E35F542E104271005FE6B1 /* Project object */ = {
+		73820B582E157CFB0026915C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					73E35F5B2E104271005FE6B1 = {
+					73820B5F2E157CFB0026915C = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
-			buildConfigurationList = 73E35F572E104271005FE6B1 /* Build configuration list for PBXProject "Talabat" */;
+			buildConfigurationList = 73820B5B2E157CFB0026915C /* Build configuration list for PBXProject "SwiftUIMentorshipALLTasks" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 73E35F532E104271005FE6B1;
+			mainGroup = 73820B572E157CFB0026915C;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 73E35F5D2E104271005FE6B1 /* Products */;
+			productRefGroup = 73820B612E157CFB0026915C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				73E35F5B2E104271005FE6B1 /* Talabat */,
+				73820B5F2E157CFB0026915C /* SwiftUIMentorshipALLTasks */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		73E35F5A2E104271005FE6B1 /* Resources */ = {
+		73820B5E2E157CFB0026915C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -131,7 +142,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		73E35F582E104271005FE6B1 /* Sources */ = {
+		73820B5C2E157CFB0026915C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -141,7 +152,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		73E35F682E104273005FE6B1 /* Debug */ = {
+		73820B6C2E157CFD0026915C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -204,7 +215,7 @@
 			};
 			name = Debug;
 		};
-		73E35F692E104273005FE6B1 /* Release */ = {
+		73820B6D2E157CFD0026915C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -260,14 +271,14 @@
 			};
 			name = Release;
 		};
-		73E35F6B2E104273005FE6B1 /* Debug */ = {
+		73820B6F2E157CFD0026915C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Talabat/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIMentorshipALLTasks/Preview Content\"";
 				DEVELOPMENT_TEAM = 4U8DMJ33ZN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -281,22 +292,22 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = yamany.Talabat;
+				PRODUCT_BUNDLE_IDENTIFIER = yamany.SwiftUIMentorshipALLTasks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		73E35F6C2E104273005FE6B1 /* Release */ = {
+		73820B702E157CFD0026915C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Talabat/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIMentorshipALLTasks/Preview Content\"";
 				DEVELOPMENT_TEAM = 4U8DMJ33ZN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -310,10 +321,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = yamany.Talabat;
+				PRODUCT_BUNDLE_IDENTIFIER = yamany.SwiftUIMentorshipALLTasks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -321,20 +332,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		73E35F572E104271005FE6B1 /* Build configuration list for PBXProject "Talabat" */ = {
+		73820B5B2E157CFB0026915C /* Build configuration list for PBXProject "SwiftUIMentorshipALLTasks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				73E35F682E104273005FE6B1 /* Debug */,
-				73E35F692E104273005FE6B1 /* Release */,
+				73820B6C2E157CFD0026915C /* Debug */,
+				73820B6D2E157CFD0026915C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		73E35F6A2E104273005FE6B1 /* Build configuration list for PBXNativeTarget "Talabat" */ = {
+		73820B6E2E157CFD0026915C /* Build configuration list for PBXNativeTarget "SwiftUIMentorshipALLTasks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				73E35F6B2E104273005FE6B1 /* Debug */,
-				73E35F6C2E104273005FE6B1 /* Release */,
+				73820B6F2E157CFD0026915C /* Debug */,
+				73820B702E157CFD0026915C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -342,11 +353,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		73E362402E105006005FE6B1 /* Coordinator */ = {
+		73820BBE2E157DB70026915C /* Coordinator */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Coordinator;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 73E35F542E104271005FE6B1 /* Project object */;
+	rootObject = 73820B582E157CFB0026915C /* Project object */;
 }
