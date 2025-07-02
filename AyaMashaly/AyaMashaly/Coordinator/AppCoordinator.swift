@@ -51,6 +51,8 @@ class AppCoordinator: AppCoordinatorProtocol {
             OrdersScreen()
         case .profile:
             ProfileScreen()
+        case .categoryDetails(let category):
+            CategoryDetailsView(category: category)
         }
     }
     

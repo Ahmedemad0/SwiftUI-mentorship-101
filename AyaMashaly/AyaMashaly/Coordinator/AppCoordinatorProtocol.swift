@@ -26,6 +26,7 @@ enum Screen: Hashable {
     case home
     case orders
     case profile
+    case categoryDetails(CategoryModel)
     
     var id: Self { self }
     
@@ -37,6 +38,7 @@ enum Screen: Hashable {
             return "Orders"
         case .profile:
             return "Profile"
+        default: return ""
         }
     }
     
@@ -45,6 +47,7 @@ enum Screen: Hashable {
         case .home: return "home_selected"
         case .orders: return "orders_selected"
         case .profile: return "profile_selected"
+        default: return ""
         }
     }
     
@@ -53,6 +56,7 @@ enum Screen: Hashable {
         case .home: return "home_unselected"
         case .orders: return "orders_selected"
         case .profile: return "profile_unselected"
+        default: return ""
         }
     }
 }

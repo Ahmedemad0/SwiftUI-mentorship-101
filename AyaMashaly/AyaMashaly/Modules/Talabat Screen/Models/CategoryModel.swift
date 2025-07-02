@@ -8,7 +8,7 @@
 import Foundation
 import DeveloperToolsSupport
 
-struct CategoryModel: Identifiable {
+struct CategoryModel: Identifiable, Equatable, Hashable {
     let id = UUID().uuidString
     let image: ImageResource
     let title: String
