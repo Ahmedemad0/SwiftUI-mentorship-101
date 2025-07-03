@@ -10,7 +10,8 @@ import SwiftUI
 struct HomeView: View {
     @State var searchText: String = ""
     @StateObject var viewModel = HomeViewModel()
-    
+    @EnvironmentObject var coordinator: AppCoordinator
+
     var body: some View {
         ScrollView {
             
@@ -56,6 +57,9 @@ struct HomeView: View {
                                 HStack {
                                     ForEach(viewModel.categoriesArray, id: \.self) { item in
                                         CategoriesView(category: item)
+                                            .onTapGesture {
+                                                coordinator.push(.food(id: "0"))
+                                            }
                                     }
                                 }
                                 .padding(.horizontal)

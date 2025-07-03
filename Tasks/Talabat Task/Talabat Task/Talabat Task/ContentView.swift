@@ -7,34 +7,36 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     
-    init() {
-        UITabBar.appearance().tintColor = UIColor(red: 245/255, green: 89/255, blue: 6/255, alpha: 1)
-    }
-        var body: some View {
-            TabView {
-                HomeView()
-                    .tabItem {
-                        Image(systemName: "house.fill")
-                        Text("Home")
-                    }
-
-                HomeView()
-                    .tabItem {
-                        Image(systemName: "heart.fill")
-                        Text("Favorites")
-                    }
-
-                HomeView()
-                    .tabItem {
-                        Image(systemName: "person.fill")
-                        Text("Account")
-                    }
-            }
-            .tint(Color(red: 245/255, green: 89/255, blue: 6/255))
-    }
+    @StateObject var coordinator = AppCoordinator()
+    @State var selectedTab: Screen = .home
+    let tabItems = [
+        TabItemModel(screen: .home, title: "Home", iconName: "house.fill"),
+        TabItemModel(screen: .order, title: "Orders", iconName: "list.bullet"),
+        TabItemModel(screen: .profile, title: "Profile", iconName: "person.fill")
+    ]
     
+    var body: some View {
+        TabView(selection: $selectedTab) {
+            ForEach(tabItems) { item in
+                NavigationStack(path: $coordinator.path) {
+                    coordinator.build(item.screen)
+                        .navigationDestination(for: Screen.self) { screen in
+                            coordinator.build(screen)
+                        }
+                }
+                .environmentObject(coordinator)
+                .tabItem {
+                    Image(systemName: item.iconName)
+                    Text(item.title)
+                }
+                .tag(item.screen)
+            }
+        }
+        .tint(Color.talabatOrange)
+    }
 }
 
 
