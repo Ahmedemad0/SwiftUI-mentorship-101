@@ -9,41 +9,27 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject private var viewModel = HomeViewModel()
+    @EnvironmentObject var coordinator: AppCoordinator
     
     var body: some View {
         ScrollView {
-            ZStack {
-#warning("Make the primary color only in header scope")
-
-                PrimaryColor
-                
-                VStack {
-#warning("It would be better if u made this view and searchBar in a separate view like HomeHeaderView")
-                    VStack(alignment: .leading, spacing: 12) {
-                        HStack {
-                            Text("Deliver to Apartment")
-                            Image(systemName: "chevron.down")
+            VStack {
+                VStack(alignment: .leading, spacing: 12) {
+                    HomeHeaderView(topPadding: topPadding, searchText: $viewModel.searchText)
+                    VStack(spacing: 10) {
+                        CategoriesSection(categories: viewModel.categories){ category in
+                            coordinator.push(.category(category))
                         }
-                        .padding(.horizontal)
-                        .padding(.top, topPadding)
+                        .frame(height: 120)
+                        .padding(.top)
+                        BestSpotSection(
+                            bestSpotsResturants: viewModel.bestSpots,
+                            onFavoriteTapped: viewModel.onFavoriteTapped
+                        )
                         
-                        SearchBar(text: $viewModel.searchText)
-                        
-                        VStack(spacing: 10) {
-                            CategoriesSection(categories: viewModel.categories)
-                                .frame(height: 120)
-                                .padding(.top)
-#warning("U don't need to add specific height...")
-                            BestSpotSection(
-                                bestSpotsResturants: viewModel.bestSpots,
-                                onFavoriteTapped: viewModel.onFavoriteTapped
-                            )
-                            .frame(height: 260)
-                            
-                            RedeemSection(points: viewModel.points, vouchersNumber: viewModel.vouchers)
-                        }
-                        .background(Color.white)
+                        RedeemSection(points: viewModel.points, vouchersNumber: viewModel.vouchers)
                     }
+                    .background(Color.white)
                 }
             }
         }

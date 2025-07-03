@@ -8,27 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var text = ""
+    
+    @StateObject var coordinator = AppCoordinator()
+    @State var selectedTab: Screen = .home
+    let tabs: [Screen] = [.home, .orders,.profile]
     
     var body: some View {
-        TabView {
-            HomeView()
-                .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("Home")
+        
+        TabView(selection: $selectedTab) {
+            ForEach(tabs, id: \.self) { tab in
+                NavigationStack(path: $coordinator.path) {
+                    coordinator.build(tab)
+                        .navigationDestination(for: Screen.self){ screen in
+                            coordinator.build(screen)
+                        }
+                        .sheet(item: $coordinator.sheet) { sheet in
+                            coordinator.build(sheet)
+                        }
+                        .fullScreenCover(item: $coordinator.fullScreenCover) { fullScreenCover in
+                            coordinator.build(fullScreenCover)
+                        }
                 }
-            
-            OrdersView()
+                .environmentObject(coordinator)
                 .tabItem {
-                    Image(systemName: "list.bullet.rectangle.portrait")
-                    Text("Orders")
+                    Image(systemName: tab.tabImage)
+                    Text(tab.tabTitle)
                 }
-            
-            ProfileView()
-                .tabItem {
-                    Image(systemName: "person.fill")
-                    Text("Profile")
-                }
+            }
         }.accentColor(PrimaryColor)
     }
 }

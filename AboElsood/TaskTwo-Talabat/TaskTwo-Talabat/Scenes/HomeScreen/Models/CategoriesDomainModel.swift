@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CategoriesDomainModel : Identifiable{
+struct CategoriesDomainModel : Identifiable , Hashable{
     var id = UUID()
     var name: String
     var image: String

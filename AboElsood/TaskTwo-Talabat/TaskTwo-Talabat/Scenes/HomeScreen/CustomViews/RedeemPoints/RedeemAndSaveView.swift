@@ -13,15 +13,20 @@ struct RedeemAndSaveView : View {
     var image: String
     
     var body: some View {
-        HStack() {
+        HStack(alignment: .center, spacing: 12) {
             Image(systemName: image)
-                .frame(width: 30 ,height: 30)
+                .frame(width: 30, height: 30)
                 .scaledToFill()
                 .foregroundStyle(.orange)
+            
             Text(text)
                 .font(.system(size: 14).bold())
+            
+            Spacer()
         }
-        .frame(maxWidth: .infinity)
-        .addBorders(radius: 10,color: .gray.opacity(0.6))
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .addBorders(radius: 10, color: .gray.opacity(0.6))
     }
+
 }
