@@ -44,11 +44,7 @@ struct BestSpotCell: View {
 
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 4) {
-                    Text("pro")
-                        .font(.system(size: 12).bold())
-                        .padding(3)
-                        .background(Color.purple)
-                        .cornerRadius(2)
+                    ProBadge()
                         .isHidden(restorant.isPro, remove: true)
 
                     Text(restorant.bestSellerMeal)

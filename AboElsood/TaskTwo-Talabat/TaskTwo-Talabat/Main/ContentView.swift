@@ -18,10 +18,10 @@ struct ContentView: View {
                     Text("Home")
                 }
             
-            FavoritesView()
+            OrdersView()
                 .tabItem {
-                    Image(systemName: "heart.fill")
-                    Text("Favorites")
+                    Image(systemName: "list.bullet.rectangle.portrait")
+                    Text("Orders")
                 }
             
             ProfileView()

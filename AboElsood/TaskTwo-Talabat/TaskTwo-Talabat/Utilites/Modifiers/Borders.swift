@@ -13,7 +13,6 @@ struct Borders : ViewModifier {
     var color : Color
     func body(content: Content) -> some View {
         content
-            .padding()
             .overlay {
                 RoundedRectangle(cornerRadius: radius).stroke(color,lineWidth: width)
             }
