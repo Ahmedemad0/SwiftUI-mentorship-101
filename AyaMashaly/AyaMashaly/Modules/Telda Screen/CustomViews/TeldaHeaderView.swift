@@ -14,18 +14,18 @@ struct TeldaHeaderView: View {
         VStack {
             UserAvatarView()
                 .scaleEffect(offset < -150 ? 0.6 : 1.0)
-                .offset(x: offset < -150 ? 80 : 0, y: offset < -150 ? 120 : 0)
+                .offset(x: offset < -150 ? 80 : 0, y: offset < -150 ? 160 : 0)
                 .animation(.easeInOut, value: offset)
                 .padding(.bottom, 80)
             
             TotalBalanceView(balance: "12,000")
                 .scaleEffect(offset < -150 ? 0.8 : 1.0)
-                .offset(x: offset < -150 ? -100 : 0, y: offset < -150 ? 40 : 0)
+                .offset(x: offset < -150 ? -100 : 0, y: offset < -150 ? 20 : 0)
                 .animation(.easeInOut, value: offset)
             
             PointsView(points: "185,000")
                 .scaleEffect(offset < -150 ? 0.8 : 1.0)
-                .offset(x: offset < -150 ? -100 : 0, y: offset < -150 ? 40 : 0)
+                .offset(x: offset < -150 ? -100 : 0, y: offset < -150 ? 20 : 0)
                 .animation(.easeInOut, value: offset)
                 .padding(.bottom, 80)
             
