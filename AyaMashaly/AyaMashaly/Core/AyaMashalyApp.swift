@@ -21,7 +21,8 @@ struct AyaMashalyApp: App {
     
     var body: some Scene {
         WindowGroup {
-            TabBarView()
+            //TabBarView()
+            TeldaScreen(viewModel: TeldaViewModel())
         }
     }
 }
